@@ -1,0 +1,4064 @@
+:root {
+  --ink: #17332d;
+  --ink-deep: #102721;
+  --cream: #f6f3eb;
+  --paper: #fbfaf6;
+  --lime: #d7f266;
+  --mint: #b8e2d2;
+  --coral: #f28c72;
+  --line: rgba(23, 51, 45, 0.18);
+  --muted: #687570;
+  --mono: "DM Mono", monospace;
+  --sans: "Manrope", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.site-shell {
+  overflow: hidden;
+}
+.site-header {
+  height: 82px;
+  padding: 0 clamp(24px, 5vw, 78px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  background: rgba(246, 243, 235, 0.92);
+  position: relative;
+  z-index: 5;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.7px;
+}
+.brand-mark {
+  position: relative;
+  width: 31px;
+  height: 31px;
+  border-radius: 7px;
+  background: linear-gradient(145deg, #4e83c2, #24558f);
+  color: #ffffff;
+  font-size: 0;
+  box-shadow:
+    0 0 15px rgba(56, 170, 255, 0.52),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+.brand-mark::before {
+  content: "★";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1;
+  text-shadow: 0 1px 5px rgba(255, 255, 255, 0.5);
+}
+.site-footer .brand-mark {
+  background: linear-gradient(145deg, #5f91cf, #2a5b96);
+}
+.site-footer .brand-mark::before {
+  color: #ffffff;
+}
+.brand-dot {
+  color: var(--coral);
+}
+.main-nav {
+  display: flex;
+  gap: 34px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.main-nav a,
+.text-link {
+  transition: opacity 0.2s;
+}
+.main-nav a:hover,
+.text-link:hover {
+  opacity: 0.55;
+}
+.header-cta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 5px;
+}
+.hero {
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 92px clamp(24px, 8vw, 136px) 80px;
+  gap: 6vw;
+  background: var(--cream);
+  position: relative;
+}
+.hero:after {
+  content: "";
+  position: absolute;
+  width: 370px;
+  height: 370px;
+  right: -160px;
+  top: -120px;
+  border: 1px solid rgba(23, 51, 45, 0.12);
+  border-radius: 50%;
+}
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow-line {
+  height: 1px;
+  width: 26px;
+  background: currentColor;
+  display: inline-block;
+}
+.hero h1 {
+  font-size: clamp(48px, 6.4vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -5px;
+  max-width: 680px;
+  margin: 29px 0 26px;
+  font-weight: 700;
+}
+.hero h1 em,
+.section-heading h2 em,
+.why-content h2 em,
+.contact-copy h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -4px;
+}
+.hero-text {
+  max-width: 430px;
+  line-height: 1.7;
+  color: var(--muted);
+  font-size: 16px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 34px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  padding: 15px 19px;
+  font-family: var(--mono);
+  font-size: 11px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+.button:hover {
+  transform: translateY(-3px);
+}
+.button-dark {
+  background: var(--ink);
+  color: var(--cream);
+}
+.button-light {
+  background: var(--lime);
+  color: var(--ink);
+  margin-top: 10px;
+}
+.text-link {
+  font-family: var(--mono);
+  font-size: 11px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 5px;
+}
+.hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 72px;
+  font-family: var(--mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.hero-proof strong {
+  font-size: 15px;
+  color: var(--ink);
+}
+.hero-proof i {
+  height: 20px;
+  width: 1px;
+  background: var(--line);
+  margin: 0 10px;
+}
+.hero-visual {
+  min-height: 440px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(23, 51, 45, 0.25);
+  border-radius: 50%;
+  transform: rotate(-24deg);
+}
+.orbit-one {
+  height: 420px;
+  width: 600px;
+}
+.orbit-two {
+  height: 255px;
+  width: 440px;
+  transform: rotate(42deg);
+  border-color: rgba(242, 140, 114, 0.5);
+}
+.signal-card {
+  width: min(100%, 390px);
+  height: 290px;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 25px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 18px 22px 0 var(--coral);
+  transform: rotate(-4deg);
+}
+.signal-top,
+.signal-foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.7px;
+  color: var(--mint);
+}
+.signal-arrow {
+  margin-left: auto;
+  font-size: 17px;
+}
+.live-dot,
+.product-status span {
+  width: 6px;
+  height: 6px;
+  background: var(--lime);
+  border-radius: 50%;
+  display: inline-block;
+}
+.signal-graph {
+  height: 177px;
+  position: relative;
+  padding-top: 38px;
+}
+.signal-graph svg {
+  width: 100%;
+  height: 140px;
+  overflow: visible;
+}
+.graph-grid {
+  stroke: rgba(246, 243, 235, 0.15);
+  stroke-width: 1;
+}
+.graph-area {
+  fill: rgba(184, 226, 210, 0.14);
+}
+.graph-line {
+  fill: none;
+  stroke: var(--lime);
+  stroke-width: 2;
+}
+.signal-graph circle {
+  fill: var(--lime);
+}
+.graph-label {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--mint);
+}
+.label-two {
+  right: 0;
+  color: var(--lime);
+  font-size: 18px;
+}
+.signal-foot {
+  border-top: 1px solid rgba(246, 243, 235, 0.2);
+  padding-top: 13px;
+}
+.signal-foot strong {
+  font-family: var(--sans);
+  font-size: 18px;
+  color: var(--cream);
+  margin-left: auto;
+}
+.positive {
+  color: var(--lime);
+}
+.floating-note {
+  position: absolute;
+  z-index: 2;
+  bottom: 8px;
+  left: 0;
+  background: var(--lime);
+  padding: 13px 17px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 11px;
+  line-height: 1.5;
+  box-shadow: 5px 5px 0 var(--ink);
+}
+.note-icon {
+  font-size: 21px;
+}
+.ticker {
+  background: var(--coral);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 17px 4vw;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.ticker-star {
+  font-size: 15px;
+}
+.catalog-section {
+  padding: 113px clamp(24px, 8vw, 136px) 125px;
+  background: var(--paper);
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 55px;
+}
+.section-heading h2,
+.why-content h2,
+.contact-copy h2 {
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1;
+  letter-spacing: -4px;
+  margin: 24px 0 0;
+}
+.section-intro {
+  max-width: 290px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 6vw 4px 0;
+}
+.catalog-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding-top: 19px;
+  margin-bottom: 28px;
+  gap: 20px;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  padding: 5px 0;
+  width: 240px;
+}
+.search-box input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: 11px var(--mono);
+  width: 100%;
+  color: var(--ink);
+}
+.category-filters {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.filter-chip {
+  border: 1px solid var(--line);
+  padding: 8px 11px;
+  font: 10px var(--mono);
+  transition: 0.2s;
+}
+.filter-chip.active,
+.filter-chip:hover {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.product-card {
+  background: var(--cream);
+  min-width: 0;
+}
+.product-card-1 {
+  background: var(--mint);
+}
+.product-card-2 {
+  background: var(--coral);
+}
+.product-card-3 {
+  background: var(--lime);
+}
+.product-top {
+  display: flex;
+  align-items: center;
+  padding: 18px 18px 0;
+  font: 9px var(--mono);
+  text-transform: uppercase;
+  gap: 10px;
+}
+.product-number {
+  opacity: 0.6;
+}
+.product-category {
+  margin-right: auto;
+}
+.product-status {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 8px;
+  opacity: 0.7;
+}
+.product-art {
+  height: 250px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.product-body {
+  padding: 0 22px 22px;
+}
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font: 9px var(--mono);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 13px;
+}
+.product-body h3 {
+  font-size: 25px;
+  letter-spacing: -1.4px;
+  margin: 18px 0 10px;
+}
+.product-body p {
+  font-size: 12px;
+  line-height: 1.6;
+  min-height: 58px;
+  max-width: 290px;
+}
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  font: 12px var(--mono);
+}
+.icon-button {
+  height: 34px;
+  width: 34px;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+.icon-button:hover {
+  transform: rotate(45deg);
+}
+.flow-art {
+  width: 245px;
+  height: 185px;
+  position: relative;
+  border: 1px solid rgba(23, 51, 45, 0.4);
+  transform: rotate(-7deg);
+}
+.flow-node {
+  position: absolute;
+  width: 112px;
+  height: 1px;
+  border: 1px solid var(--ink);
+  display: grid;
+  place-items: center;
+  font: 13px var(--mono);
+  background: var(--mint);
+}
+.node-a {
+  top: 20px;
+  left: 20px;
+}
+.node-b {
+  top: 67px;
+  left: 97px;
+  background: var(--ink);
+  color: var(--lime);
+}
+.node-c {
+  bottom: 17px;
+  right: 18px;
+  background: var(--coral);
+}
+.flow-line {
+  position: absolute;
+  height: 1px;
+  width: 68px;
+  background: var(--ink);
+  transform-origin: left;
+}
+.line-a {
+  top: 52px;
+  left: 69px;
+  transform: rotate(20deg);
+}
+.line-b {
+  top: 104px;
+  left: 145px;
+  transform: rotate(32deg);
+}
+.flow-label,
+.shield-label,
+.signal-label {
+  position: absolute;
+  font: 9px var(--mono);
+  letter-spacing: 1px;
+}
+.flow-label {
+  bottom: 13px;
+  left: -16px;
+  transform: rotate(-8deg);
+}
+.shield-art {
+  width: 245px;
+  height: 200px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  transform: rotate(9deg);
+}
+.shield-shape {
+  background: var(--ink);
+  color: var(--lime);
+  width: 78px;
+  height: 94px;
+  clip-path: polygon(50% 0, 90% 17%, 84% 66%, 50% 100%, 16% 66%, 10% 17%);
+  display: grid;
+  place-items: center;
+  font-size: 27px;
+}
+.shield-ring {
+  position: absolute;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  height: 130px;
+  width: 130px;
+}
+.ring-a {
+  border-style: dashed;
+  transform: rotate(35deg);
+}
+.ring-b {
+  height: 170px;
+  width: 170px;
+  transform: rotate(-22deg);
+}
+.shield-label {
+  bottom: -15px;
+  right: -8px;
+  transform: rotate(-9deg);
+  background: var(--coral);
+  padding: 5px;
+}
+.signal-art {
+  height: 190px;
+  width: 245px;
+  border: 1px solid var(--ink);
+  position: relative;
+  transform: rotate(-5deg);
+  padding: 27px;
+}
+.signal-bars {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+  height: 115px;
+  border-bottom: 1px solid var(--ink);
+  border-left: 1px solid var(--ink);
+  padding: 0 18px;
+}
+.signal-bars i {
+  display: block;
+  width: 20px;
+  background: var(--ink);
+}
+.signal-bars i:nth-child(1) {
+  height: 30%;
+}
+.signal-bars i:nth-child(2) {
+  height: 53%;
+}
+.signal-bars i:nth-child(3) {
+  height: 43%;
+}
+.signal-bars i:nth-child(4) {
+  height: 74%;
+  background: var(--coral);
+}
+.signal-bars i:nth-child(5) {
+  height: 100%;
+  background: var(--ink);
+}
+.signal-spark {
+  position: absolute;
+  right: 17px;
+  top: 13px;
+  font-size: 26px;
+}
+.signal-label {
+  bottom: -16px;
+  left: -12px;
+  background: var(--coral);
+  padding: 5px;
+  transform: rotate(5deg);
+}
+.why-section {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding: 104px clamp(24px, 8vw, 136px);
+  background: var(--ink);
+  color: var(--cream);
+}
+.why-label {
+  padding-top: 10px;
+  color: var(--mint);
+}
+.why-content h2 {
+  margin-top: 0;
+}
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  margin-top: 77px;
+  border-top: 1px solid rgba(246, 243, 235, 0.25);
+  padding-top: 20px;
+}
+.reason-grid span {
+  font: 10px var(--mono);
+  color: var(--lime);
+}
+.reason-grid h3 {
+  font-size: 15px;
+  margin: 28px 0 10px;
+}
+.reason-grid p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #b5c3be;
+  max-width: 190px;
+}
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10vw;
+  padding: 110px clamp(24px, 8vw, 136px);
+  background: var(--coral);
+}
+.contact-copy > p:nth-of-type(2) {
+  max-width: 340px;
+  line-height: 1.7;
+  margin-top: 34px;
+}
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font: 10px var(--mono);
+  margin-top: 55px;
+}
+.inquiry-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 15px;
+  align-content: start;
+  padding-top: 8px;
+}
+.inquiry-form label {
+  font: 10px var(--mono);
+  text-transform: uppercase;
+}
+.inquiry-form input,
+.inquiry-form select,
+.inquiry-form textarea {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  background: transparent;
+  padding: 12px 0 9px;
+  outline: 0;
+  font: 14px var(--sans);
+  color: var(--ink);
+  resize: vertical;
+}
+.inquiry-form textarea {
+  min-height: 54px;
+}
+.full-field {
+  grid-column: 1/-1;
+}
+.notice {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  padding: 16px 20px;
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 12px;
+  box-shadow: 5px 5px 0 var(--lime);
+}
+.notice-error {
+  box-shadow: 5px 5px 0 var(--coral);
+}
+.site-footer {
+  background: var(--ink-deep);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px clamp(24px, 5vw, 78px);
+  font: 10px var(--mono);
+}
+.site-footer .brand {
+  font-family: var(--sans);
+  font-size: 16px;
+}
+.reveal {
+  animation: rise 0.7s both;
+}
+.reveal-delay {
+  animation-delay: 0.18s;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.empty-state {
+  padding: 35px 0;
+  font-family: var(--mono);
+  color: var(--muted);
+}
+@media (max-width: 800px) {
+  .main-nav {
+    display: none;
+  }
+  .site-header {
+    height: 70px;
+  }
+  .header-cta {
+    font-size: 9px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 65px;
+    min-height: auto;
+  }
+  .hero h1 {
+    letter-spacing: -3px;
+  }
+  .hero-visual {
+    margin-top: 50px;
+    min-height: 390px;
+  }
+  .orbit-one {
+    width: 500px;
+  }
+  .section-heading,
+  .catalog-tools {
+    display: block;
+  }
+  .section-intro {
+    margin: 25px 0 0;
+  }
+  .category-filters {
+    justify-content: flex-start;
+    margin-top: 20px;
+  }
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-art {
+    height: 230px;
+  }
+  .why-section,
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+  .why-content h2 {
+    margin-top: 0;
+  }
+  .reason-grid {
+    margin-top: 50px;
+  }
+  .contact-details {
+    margin-top: 35px;
+  }
+  .site-footer {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .site-footer span:nth-child(2) {
+    order: 3;
+    width: 100%;
+  }
+}
+@media (max-width: 470px) {
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .catalog-section,
+  .why-section,
+  .contact-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .hero-proof {
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+  .hero-proof i {
+    display: none;
+  }
+  .hero-proof span {
+    margin-right: 12px;
+  }
+  .signal-card {
+    transform: rotate(-2deg) scale(0.88);
+  }
+  .floating-note {
+    left: 0;
+    bottom: -3px;
+  }
+  .inquiry-form {
+    grid-template-columns: 1fr;
+  }
+  .full-field {
+    grid-column: auto;
+  }
+}
+.home-next {
+  padding: 92px clamp(24px, 8vw, 136px) 105px;
+  background: var(--paper);
+}
+.home-next-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  margin-top: 32px;
+}
+.home-next-grid a {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  min-height: 130px;
+  padding: 25px;
+  background: var(--paper);
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.home-next-grid a:hover {
+  background: var(--lime);
+}
+.home-next-grid strong {
+  font-size: 19px;
+  letter-spacing: -0.8px;
+}
+.home-next-grid span {
+  color: var(--muted);
+  font: 10px var(--mono);
+}
+.page-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: end;
+  min-height: 405px;
+  padding: 90px clamp(24px, 8vw, 136px) 75px;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+}
+.page-hero h1 {
+  max-width: 700px;
+  margin: 25px 0 0;
+  font-size: clamp(50px, 6vw, 82px);
+  line-height: 0.98;
+  letter-spacing: -5px;
+}
+.page-hero h1 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -4px;
+}
+.page-hero > p {
+  max-width: 300px;
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.catalog-page-section {
+  padding-top: 74px;
+}
+.catalog-page-section .product-body h2 {
+  font-size: 25px;
+  letter-spacing: -1.4px;
+  margin: 18px 0 10px;
+}
+.standard-intro {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 5vw;
+  padding: 105px clamp(24px, 8vw, 136px);
+  background: var(--paper);
+}
+.standard-stamp {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  width: 170px;
+  height: 170px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  font-size: 74px;
+  line-height: 0.7;
+  transform: rotate(-12deg);
+}
+.standard-stamp span {
+  margin-top: 20px;
+  font: 10px var(--mono);
+}
+.standard-intro h2 {
+  margin: 24px 0;
+  font-size: clamp(35px, 4vw, 57px);
+  line-height: 1;
+  letter-spacing: -3px;
+}
+.standard-intro h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+.standard-intro > div:last-child > p:last-child {
+  max-width: 560px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.why-page-section {
+  padding-top: 90px;
+}
+.sales-page-section {
+  padding-top: 92px;
+}
+@media (max-width: 800px) {
+  .home-next-grid,
+  .page-hero,
+  .standard-intro {
+    grid-template-columns: 1fr;
+  }
+  .page-hero {
+    min-height: 360px;
+    gap: 38px;
+  }
+  .page-hero h1 {
+    letter-spacing: -3px;
+  }
+  .standard-stamp {
+    width: 120px;
+    height: 120px;
+    font-size: 52px;
+  }
+}
+.menu-toggle {
+  display: none;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  padding: 9px 11px;
+  font: 10px var(--mono);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.scroll-progress {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--coral);
+  pointer-events: none;
+}
+.back-to-top {
+  position: fixed;
+  z-index: 10;
+  right: 22px;
+  bottom: 22px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--ink);
+  background: var(--lime);
+  color: var(--ink);
+  font: 19px var(--sans);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    background 0.2s;
+}
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.back-to-top:hover {
+  background: var(--coral);
+}
+.product-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.product-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 8px 10px 0 var(--ink);
+}
+.product-card:hover .product-art {
+  transform: scale(1.04);
+}
+.product-art {
+  transition: transform 0.35s ease;
+}
+.search-box:focus-within {
+  border-color: var(--ink);
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 4px;
+}
+@media (max-width: 800px) {
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    margin-right: 14px;
+  }
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 18px 24px 24px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 10px 24px rgba(23, 51, 45, 0.09);
+  }
+  .main-nav.open {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .main-nav.open a {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .main-nav.open a:last-child {
+    border-bottom: 0;
+  }
+  .header-cta {
+    display: none;
+  }
+  .site-header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: transparent;
+}
+.site-shell {
+  background: #e9e1d5;
+}
+.catalog-section,
+.home-next,
+.standard-intro {
+  background: transparent;
+}
+.product-card {
+  background: #ffffff;
+  border: 1px solid rgba(31, 39, 45, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 7px 18px rgba(41, 43, 47, 0.12);
+  transform: none;
+}
+.product-card-1,
+.product-card-2,
+.product-card-3 {
+  background: #ffffff;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 28px rgba(41, 43, 47, 0.17);
+}
+.product-top {
+  padding: 18px 20px 0;
+}
+.product-art {
+  height: 220px;
+  margin: 14px 14px 0;
+  border-radius: 9px;
+  background: #f8f5ef;
+}
+.product-body {
+  padding: 20px 22px 22px;
+}
+.product-meta {
+  color: #78817f;
+}
+.product-body h2,
+.product-body h3 {
+  color: #11181a;
+}
+.product-body p {
+  color: #66706f;
+}
+.product-bottom strong {
+  color: #152925;
+}
+.icon-button {
+  border-radius: 8px;
+  background: #ffb83f;
+  color: #182822;
+}
+.home-next-grid {
+  gap: 15px;
+  background: transparent;
+}
+.home-next-grid a {
+  border: 1px solid rgba(31, 39, 45, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 7px 18px rgba(41, 43, 47, 0.1);
+}
+.home-next-grid a:hover {
+  background: #ffffff;
+  box-shadow: 0 13px 24px rgba(41, 43, 47, 0.15);
+  transform: translateY(-4px);
+}
+.filter-chip.active,
+.filter-chip:hover {
+  background: #ffb83f;
+  color: #182822;
+  border-color: #ffb83f;
+}
+.search-box input::placeholder {
+  color: #89918e;
+}
+.site-shell {
+  position: relative;
+  min-height: 100vh;
+  background: #050707;
+  color: #f6f3eb;
+}
+.site-shell::before {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  top: -70px;
+  left: -180px;
+  width: 170px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(246, 243, 235, 0.1);
+  box-shadow:
+    55px 16px 0 rgba(246, 243, 235, 0.09),
+    105px -8px 0 rgba(246, 243, 235, 0.07),
+    16px 25px 0 rgba(246, 243, 235, 0.07);
+  filter: blur(2px);
+  pointer-events: none;
+  animation: cloudToSouth 24s linear infinite;
+}
+.site-shell::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 16vh;
+  background: #0d1a17;
+  clip-path: polygon(
+    0 63%,
+    12% 47%,
+    23% 61%,
+    35% 35%,
+    48% 56%,
+    61% 29%,
+    73% 52%,
+    86% 39%,
+    100% 54%,
+    100% 100%,
+    0 100%
+  );
+  pointer-events: none;
+}
+.night-sky {
+  animation: cloudMoveLeft 20s linear infinite;
+  background-position: 100% 50%, 50% 50%, 50% 50%;
+  background-size: 125% 125%, auto, auto;
+}
+
+
+
+@keyframes slowCloudDrift {
+  from {
+    transform: translate3d(7%, 0, 0) scale(1.08);
+  }
+
+  to {
+    transform: translate3d(-7%, 0, 0) scale(1.08);
+  }
+}
+
+
+@keyframes cloudMoveLeft {
+  from {
+    background-position: 100% 50%, 50% 50%, 50% 50%;
+  }
+
+  to {
+    background-position: 0% 50%, 50% 50%, 50% 50%;
+  }
+}
+.night-sky::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  opacity: 0.6;
+  background-image:
+    radial-gradient(circle at 8% 18%, #ffffff 0 1px, transparent 1.8px),
+    radial-gradient(circle at 18% 34%, #bfe7ff 0 1px, transparent 1.7px),
+    radial-gradient(circle at 29% 12%, #ffffff 0 1px, transparent 1.8px),
+    radial-gradient(circle at 42% 27%, #d8f3ff 0 1px, transparent 1.6px),
+    radial-gradient(circle at 67% 17%, #ffffff 0 1px, transparent 1.8px),
+    radial-gradient(circle at 78% 33%, #a7dfff 0 1px, transparent 1.6px),
+    radial-gradient(circle at 91% 12%, #ffffff 0 1px, transparent 1.8px),
+    radial-gradient(circle at 84% 55%, #d8f3ff 0 1px, transparent 1.7px),
+    radial-gradient(circle at 53% 61%, #ffffff 0 1px, transparent 1.8px);
+  background-size:
+    220px 180px,
+    310px 240px,
+    410px 330px,
+    530px 400px,
+    370px 290px,
+    460px 360px,
+    280px 210px,
+    600px 470px,
+    340px 260px;
+  animation: starDrift 34s linear infinite;
+}
+.night-sky::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 39%;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(24, 100, 151, 0),
+      rgba(4, 16, 28, 0.8) 28%,
+      #03090f 75%
+    ),
+    #06111c;
+  clip-path: polygon(
+    0 62%,
+    8% 49%,
+    16% 61%,
+    25% 33%,
+    34% 56%,
+    43% 20%,
+    51% 52%,
+    61% 31%,
+    69% 57%,
+    78% 38%,
+    87% 59%,
+    94% 44%,
+    100% 55%,
+    100% 100%,
+    0 100%
+  );
+}
+.night-sky > * {
+  z-index: 2;
+}
+.moon {
+  position: absolute;
+  top: 14vh;
+  right: 17vw;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #fff8d7;
+  opacity: 0.75;
+  box-shadow: 0 0 10px 2px rgba(255, 248, 215, 0.2);
+}
+.moon::before,
+.moon::after,
+.moon i::before,
+.moon i::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(195, 184, 143, 0.2);
+}
+.moon::before {
+  top: 6px;
+  left: 8px;
+  width: 5px;
+  height: 3px;
+}
+.moon::after {
+  right: 5px;
+  bottom: 7px;
+  width: 6px;
+  height: 4px;
+}
+.moon i::before {
+  top: 15px;
+  left: 5px;
+  width: 3px;
+  height: 3px;
+}
+.moon i::after {
+  top: 8px;
+  right: 8px;
+  width: 2px;
+  height: 2px;
+}
+.cloud {
+  position: absolute;
+  left: -320px;
+  width: 260px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(198, 230, 245, 0.2);
+  box-shadow: 0 0 26px rgba(104, 190, 235, 0.12);
+  filter: blur(4px);
+  opacity: 0;
+  animation-name: cloudAcrossSky;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.18) 65%,
+    transparent 82%
+  );
+}
+.cloud::before {
+  left: 42px;
+  width: 106px;
+  height: 75px;
+}
+.cloud::after {
+  right: 34px;
+  width: 82px;
+  height: 61px;
+}
+.cloud-one {
+  top: 19vh;
+  animation-duration: 30s;
+}
+.cloud-two {
+  top: 39vh;
+  transform: scale(0.7);
+  animation-duration: 39s;
+  animation-delay: -13s;
+  opacity: 0.3;
+}
+.cloud-three {
+  top: 58vh;
+  transform: scale(1.35);
+  animation-duration: 47s;
+  animation-delay: -27s;
+  opacity: 0.2;
+}
+@keyframes cloudAcrossSky {
+  0% {
+    transform: translate3d(0, -4vh, 0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.55;
+  }
+  70% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate3d(145vw, 75vh, 0) scale(1.08);
+    opacity: 0;
+  }
+}
+.cloud-two,
+.cloud-three {
+  animation-name: cloudAcrossSkyDepth;
+}
+@keyframes cloudAcrossSkyDepth {
+  0% {
+    transform: translate3d(0, -2vh, 0) scale(0.7);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate3d(145vw, 45vh, 0) scale(0.82);
+    opacity: 0;
+  }
+}
+.cloud-three {
+  animation-name: cloudAcrossSkyLow;
+}
+@keyframes cloudAcrossSkyLow {
+  0% {
+    transform: translate3d(0, -1vh, 0) scale(1.35);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate3d(145vw, 30vh, 0) scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes starDrift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-35px, 18px, 0);
+  }
+}
+.site-shell > * {
+  position: relative;
+  z-index: 1;
+}
+.site-shell > .night-sky {
+  position: fixed;
+  z-index: 0 !important;
+}
+.site-header,
+.hero,
+.page-hero,
+.catalog-section,
+.home-next,
+.standard-intro,
+.why-section,
+.contact-section {
+  background: transparent;
+}
+.site-header {
+  border-color: rgba(246, 243, 235, 0.18);
+  background: rgba(5, 7, 7, 0.78);
+  color: #f6f3eb;
+}
+.header-cta,
+.text-link {
+  border-color: #f6f3eb;
+}
+.hero-text,
+.section-intro,
+.page-hero > p,
+.standard-intro > div:last-child > p:last-child {
+  color: #b9c2be;
+}
+.catalog-section {
+  color: #f6f3eb;
+}
+.catalog-section .catalog-tools {
+  border-color: rgba(246, 243, 235, 0.22);
+}
+.catalog-section .search-box {
+  border-color: rgba(246, 243, 235, 0.35);
+}
+.catalog-section .search-box input {
+  color: #f6f3eb;
+}
+.catalog-section .filter-chip {
+  color: #f6f3eb;
+  border-color: rgba(246, 243, 235, 0.3);
+}
+.catalog-section .filter-chip.active,
+.catalog-section .filter-chip:hover {
+  color: #182822;
+}
+.contact-section {
+  border-top: 1px solid rgba(246, 243, 235, 0.16);
+  color: #f6f3eb;
+}
+.inquiry-form input,
+.inquiry-form select,
+.inquiry-form textarea {
+  color: #f6f3eb;
+  border-color: rgba(246, 243, 235, 0.45);
+}
+.why-section {
+  border-top: 1px solid rgba(246, 243, 235, 0.16);
+}
+@keyframes cloudToSouth {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.8);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(115vw, 88vh, 0) scale(1.25);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-shell::before {
+    animation: none;
+    opacity: 0.35;
+  }
+}
+.catalog-page-section .product-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+}
+.catalog-page-section .product-card {
+  min-height: 0;
+}
+.catalog-page-section .product-top {
+  padding: 13px 14px 0;
+  gap: 6px;
+}
+.catalog-page-section .product-status {
+  font-size: 0;
+}
+.catalog-page-section .product-art {
+  height: 132px;
+  margin: 11px 10px 0;
+}
+.catalog-page-section .product-body {
+  padding: 14px 15px 15px;
+}
+.catalog-page-section .product-meta {
+  font-size: 7px;
+  padding-bottom: 9px;
+}
+.catalog-page-section .product-body h2 {
+  font-size: 16px;
+  letter-spacing: -0.6px;
+  margin: 12px 0 7px;
+}
+.catalog-page-section .product-body p {
+  min-height: 52px;
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.45;
+}
+.catalog-page-section .product-bottom {
+  margin-top: 14px;
+  font-size: 9px;
+}
+.catalog-page-section .icon-button {
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+}
+.platform-art {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+}
+.platform-mark {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  padding: 7px;
+  border-radius: 10px;
+  background: #111416;
+  color: #ffffff;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.05;
+}
+.platform-caption {
+  color: #89918e;
+  font: 7px var(--mono);
+  letter-spacing: 1px;
+}
+@media (max-width: 1100px) {
+  .catalog-page-section .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 800px) {
+  .catalog-page-section .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.product-card,
+.home-next-grid a {
+  border-color: rgba(126, 207, 255, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(126, 207, 255, 0.22),
+    0 10px 24px rgba(0, 0, 0, 0.24);
+}
+.product-card:hover,
+.home-next-grid a:hover {
+  border-color: rgba(168, 225, 255, 0.6);
+  box-shadow:
+    0 0 0 1px rgba(168, 225, 255, 0.4),
+    0 0 18px rgba(39, 157, 255, 0.28),
+    0 16px 32px rgba(0, 0, 0, 0.34);
+}
+.ticker {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+  background: #e68b70;
+  color: #111b1a;
+  border-top: 1px solid rgba(255, 211, 190, 0.5);
+  border-bottom: 1px solid rgba(12, 26, 24, 0.35);
+}
+.ticker::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 248, 215, 0.35),
+    transparent 25%,
+    transparent 75%,
+    rgba(255, 248, 215, 0.35)
+  );
+  pointer-events: none;
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 54px;
+  padding: 24px 0;
+  font-family: var(--sans);
+  font-size: clamp(18px, 2vw, 30px);
+  font-weight: 800;
+  letter-spacing: 4px;
+  animation: tickerDrift 28s linear infinite;
+}
+.ticker-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+}
+.ticker-category {
+  text-shadow: 0 2px 0 rgba(91, 39, 30, 0.18);
+}
+.ticker-category i {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-size: 21px;
+  font-style: normal;
+  letter-spacing: 0;
+  background: rgba(255, 248, 215, 0.18);
+  box-shadow: 0 0 13px rgba(255, 248, 215, 0.42);
+}
+.ticker-operations {
+  color: #17332d;
+}
+.ticker-security {
+  color: #112b4b;
+}
+.ticker-intelligence {
+  color: #462044;
+}
+.ticker-category::first-letter {
+  color: #fff8d7;
+}
+.ticker-track .ticker-star {
+  color: #fff8d7;
+  font-size: 17px;
+  text-shadow: 0 0 8px rgba(255, 248, 215, 0.8);
+}
+@keyframes tickerDrift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33%);
+  }
+}
+.home-next-grid a {
+  min-height: 174px;
+  padding: 20px;
+  background: #ffffff;
+  color: #17332d;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+.next-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #79908b;
+  font: 9px var(--mono);
+}
+.next-card-top i {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #75c8fb;
+  border-radius: 50%;
+  background: #eff9ff;
+  color: #168ee2;
+  font-size: 17px;
+  font-style: normal;
+  box-shadow: 0 0 13px rgba(56, 170, 255, 0.3);
+}
+.home-next-grid a strong {
+  margin-top: 13px;
+  font-size: 20px;
+  letter-spacing: -0.9px;
+}
+.home-next-grid a > span:last-child {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  color: #6d7b78;
+}
+.home-next-grid a > span:last-child b {
+  color: #168ee2;
+  font-size: 15px;
+}
+.home-next-grid a:hover {
+  background: #ffffff;
+  border-color: #9cdbff;
+  transform: translateY(-7px);
+  box-shadow:
+    0 0 0 1px rgba(126, 207, 255, 0.7),
+    0 0 30px rgba(56, 170, 255, 0.62),
+    0 16px 30px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 800px) {
+  .ticker-track {
+    gap: 32px;
+    font-size: 18px;
+    animation-duration: 20s;
+  }
+  .ticker-category i {
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+.home-next {
+  position: relative;
+  padding-top: 105px;
+  padding-bottom: 120px;
+}
+.home-next::before {
+  content: "NEXT / 03";
+  position: absolute;
+  top: 42px;
+  right: clamp(24px, 8vw, 136px);
+  color: rgba(156, 219, 255, 0.6);
+  font: 9px var(--mono);
+  letter-spacing: 1.5px;
+}
+.home-next-grid {
+  gap: 18px;
+  margin-top: 35px;
+}
+.home-next-grid a {
+  position: relative;
+  min-height: 205px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  color: #f7fbff;
+  isolation: isolate;
+  box-shadow:
+    0 0 0 1px rgba(126, 207, 255, 0.24),
+    0 12px 28px rgba(0, 0, 0, 0.28);
+}
+.home-next-grid a::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -30%;
+  width: 160%;
+  height: 2px;
+  background: currentColor;
+  box-shadow: 0 0 14px currentColor;
+  animation: portalScan 4s ease-in-out infinite;
+}
+.home-next-grid a::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -60px;
+  bottom: -75px;
+  width: 210px;
+  height: 210px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  opacity: 0.24;
+  box-shadow:
+    0 0 0 22px rgba(255, 255, 255, 0.03),
+    0 0 0 44px rgba(255, 255, 255, 0.025);
+  animation: portalOrbit 8s linear infinite;
+}
+.home-next-grid a:nth-child(1) {
+  background: #07528a;
+  border-color: #42b9ff;
+  color: #a8e1ff;
+}
+.home-next-grid a:nth-child(2) {
+  background: #39236c;
+  border-color: #be9cff;
+  color: #dfcaff;
+}
+.home-next-grid a:nth-child(3) {
+  background: #9a462f;
+  border-color: #ffc089;
+  color: #ffe0bd;
+}
+.home-next-grid a:nth-child(2)::before {
+  animation-delay: 1.3s;
+}
+.home-next-grid a:nth-child(3)::before {
+  animation-delay: 2.6s;
+}
+.next-card-top {
+  position: relative;
+  z-index: 1;
+  color: inherit;
+}
+.next-card-top i {
+  border-color: currentColor;
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+  box-shadow: 0 0 18px currentColor;
+}
+.home-next-grid a strong {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 22px;
+}
+.home-next-grid a > span:last-child {
+  position: relative;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.76);
+}
+.home-next-grid a > span:last-child b {
+  color: inherit;
+}
+.home-next-grid a:hover {
+  background: inherit;
+  border-color: #ffffff;
+  transform: translateY(-10px) rotate(-1deg);
+  box-shadow:
+    0 0 0 2px currentColor,
+    0 0 34px currentColor,
+    0 22px 38px rgba(0, 0, 0, 0.4);
+}
+@keyframes portalScan {
+  0%,
+  100% {
+    transform: translateX(-18%);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateX(18%);
+    opacity: 1;
+  }
+}
+@keyframes portalOrbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 800px) {
+  .home-next::before {
+    right: 20px;
+  }
+  .home-next-grid a {
+    min-height: 180px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-next-grid a::before,
+  .home-next-grid a::after {
+    animation: none;
+  }
+}
+.shooting-star {
+  position: absolute;
+  top: 22vh;
+  left: -180px;
+  width: 112px;
+  height: 1px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(167, 223, 255, 0.3) 48%,
+    #d8f3ff 84%,
+    #ffffff 100%
+  );
+  box-shadow: 0 0 6px 1px rgba(167, 223, 255, 0.35);
+  opacity: 0;
+  transform: rotate(24deg);
+  transform-origin: right center;
+  animation: shootingStar 40s ease-in-out 7s infinite;
+}
+.shooting-star::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -3px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow:
+    0 0 6px 2px #d8f3ff,
+    0 0 14px 5px rgba(39, 157, 255, 0.68);
+  transform: translateY(-50%);
+}
+@keyframes shootingStar {
+  0%,
+  10%,
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(24deg) scaleX(0.5);
+  }
+  11% {
+    opacity: 1;
+  }
+  16% {
+    opacity: 0.95;
+    transform: translate3d(72vw, 31vh, 0) rotate(24deg) scaleX(1);
+  }
+  20%,
+  88% {
+    opacity: 0;
+    transform: translate3d(92vw, 43vh, 0) rotate(24deg) scaleX(0.7);
+  }
+  89% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(24deg) scaleX(0.5);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shooting-star {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Cinematic atmospheric cloud system */
+.night-sky {
+  background:
+    radial-gradient(ellipse at 78% 48%, rgba(255, 190, 112, 0.13) 0%, rgba(255, 190, 112, 0.045) 17%, transparent 39%),
+    radial-gradient(ellipse at 42% 42%, rgba(65, 154, 214, 0.22) 0%, rgba(65, 154, 214, 0.07) 30%, transparent 58%),
+    linear-gradient(180deg, #020816 0%, #062447 42%, #0b3b62 68%, #061421 100%);
+}
+
+.night-sky::before {
+  opacity: 0.48;
+  animation: starDrift 70s linear infinite;
+}
+
+.night-sky::after {
+  height: 34%;
+  background:
+    linear-gradient(180deg, rgba(4, 24, 43, 0) 0%, rgba(3, 15, 28, 0.46) 30%, rgba(2, 9, 17, 0.94) 78%, #02070d 100%),
+    #06121e;
+}
+
+/* A soft atmospheric veil makes the cloud layers feel farther away. */
+.night-sky .cloud {
+  position: absolute;
+  left: -34vw;
+  width: 40vw;
+  min-width: 360px;
+  max-width: 760px;
+  height: 105px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  filter: blur(8px);
+  will-change: transform, opacity;
+  background:
+    radial-gradient(ellipse at 24% 68%, rgba(190, 218, 239, 0.28) 0%, rgba(122, 166, 201, 0.17) 32%, transparent 67%),
+    radial-gradient(ellipse at 51% 48%, rgba(239, 247, 251, 0.46) 0%, rgba(159, 197, 224, 0.24) 36%, transparent 72%),
+    radial-gradient(ellipse at 76% 68%, rgba(165, 201, 226, 0.28) 0%, rgba(84, 132, 171, 0.14) 38%, transparent 72%);
+  box-shadow:
+    0 22px 42px rgba(1, 14, 28, 0.28),
+    0 0 70px rgba(116, 181, 221, 0.08);
+  animation-name: cloudJourney;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.night-sky .cloud::before,
+.night-sky .cloud::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.night-sky .cloud::before {
+  left: 10%;
+  width: 42%;
+  height: 150%;
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(245, 250, 253, 0.54) 0%, rgba(175, 210, 233, 0.31) 40%, rgba(55, 97, 130, 0.10) 67%, transparent 78%);
+  box-shadow: inset -20px -18px 30px rgba(19, 51, 78, 0.10);
+}
+
+.night-sky .cloud::after {
+  right: 7%;
+  width: 37%;
+  height: 125%;
+  background:
+    radial-gradient(ellipse at 45% 38%, rgba(232, 243, 250, 0.43) 0%, rgba(145, 187, 216, 0.23) 43%, rgba(38, 78, 111, 0.10) 70%, transparent 80%);
+}
+
+.night-sky .cloud-one {
+  --cloud-scale: 1;
+  top: 17vh;
+  width: 46vw;
+  height: 118px;
+  min-width: 440px;
+  animation-duration: 105s;
+  animation-delay: -48s;
+}
+
+.night-sky .cloud-two {
+  --cloud-scale: 0.72;
+  top: 39vh;
+  width: 34vw;
+  height: 82px;
+  min-width: 320px;
+  opacity: 0;
+  filter: blur(11px);
+  animation-duration: 145s;
+  animation-delay: -88s;
+}
+
+.night-sky .cloud-three {
+  --cloud-scale: 1.22;
+  top: 56vh;
+  width: 58vw;
+  height: 145px;
+  min-width: 560px;
+  opacity: 0;
+  filter: blur(7px);
+  animation-duration: 125s;
+  animation-delay: -74s;
+}
+
+/* Extra irregular lobes make each cloud mass less geometric. */
+.night-sky .cloud-one::before {
+  left: 8%;
+  width: 46%;
+  height: 155%;
+}
+
+.night-sky .cloud-one::after {
+  right: 8%;
+  width: 35%;
+  height: 125%;
+}
+
+.night-sky .cloud-two::before {
+  left: 14%;
+  width: 38%;
+  height: 140%;
+}
+
+.night-sky .cloud-two::after {
+  right: 12%;
+  width: 34%;
+  height: 112%;
+}
+
+.night-sky .cloud-three::before {
+  left: 12%;
+  width: 48%;
+  height: 170%;
+}
+
+.night-sky .cloud-three::after {
+  right: 9%;
+  width: 39%;
+  height: 145%;
+}
+
+@keyframes cloudJourney {
+  0% {
+    transform: translate3d(-8vw, -1vh, 0) scale(var(--cloud-scale));
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.16;
+  }
+  28% {
+    opacity: 0.34;
+  }
+  52% {
+    opacity: 0.28;
+  }
+  76% {
+    opacity: 0.20;
+  }
+  92% {
+    opacity: 0.08;
+  }
+  100% {
+    transform: translate3d(145vw, 10vh, 0) scale(calc(var(--cloud-scale) * 1.06));
+    opacity: 0;
+  }
+}
+
+@keyframes cloudBreath {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -8px; }
+}
+
+@media (min-width: 1200px) {
+  .night-sky .cloud {
+    animation-name: cloudJourney, cloudBreath;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-duration: 120s, 18s;
+  }
+
+  .night-sky .cloud-two {
+    animation-duration: 160s, 23s;
+  }
+
+  .night-sky .cloud-three {
+    animation-duration: 140s, 20s;
+  }
+}
+
+@media (max-width: 700px) {
+  .night-sky .cloud {
+    min-width: 300px;
+    filter: blur(7px);
+  }
+
+  .night-sky .cloud-one {
+    width: 78vw;
+    height: 90px;
+  }
+
+  .night-sky .cloud-two {
+    width: 62vw;
+    height: 65px;
+  }
+
+  .night-sky .cloud-three {
+    width: 88vw;
+    height: 105px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .night-sky .cloud,
+  .night-sky .cloud-two,
+  .night-sky .cloud-three {
+    animation: none;
+    opacity: 0.12;
+    transform: none;
+  }
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 15;
+  height: 74px;
+  border-bottom-color: rgba(126, 207, 255, 0.28);
+  background: rgba(4, 9, 11, 0.84);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.22);
+}
+.site-shell {
+  padding-top: 74px;
+}
+.site-header::after {
+  content: "LIVE / NORTHSTAR NETWORK";
+  position: absolute;
+  right: clamp(24px, 5vw, 78px);
+  bottom: -21px;
+  color: rgba(126, 207, 255, 0.72);
+  font: 7px var(--mono);
+  letter-spacing: 1.2px;
+  pointer-events: none;
+}
+.main-nav {
+  gap: 30px;
+  align-items: center;
+}
+.main-nav a {
+  position: relative;
+  color: rgba(246, 243, 235, 0.72);
+  transition:
+    color 0.2s,
+    transform 0.2s;
+}
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+  color: #ffffff;
+  opacity: 1;
+  transform: translateY(-1px);
+}
+.main-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+  height: 2px;
+  background: #78c9ff;
+  box-shadow: 0 0 9px #339eff;
+}
+.brand-mark {
+  box-shadow: 0 0 15px rgba(56, 170, 255, 0.52);
+}
+.header-cta {
+  color: #b9e5ff;
+  border-bottom-color: #78c9ff;
+}
+.site-footer {
+  position: relative;
+  min-height: 128px;
+  gap: 28px;
+  border-top: 1px solid rgba(126, 207, 255, 0.28);
+  background: #030607;
+  box-shadow: 0 -12px 35px rgba(0, 0, 0, 0.24);
+}
+.site-footer::before {
+  content: "NORTHSTAR DIGITAL MARKET / CONNECTION CLOSED";
+  position: absolute;
+  top: 17px;
+  right: clamp(24px, 5vw, 78px);
+  color: rgba(126, 207, 255, 0.54);
+  font: 7px var(--mono);
+  letter-spacing: 1.2px;
+}
+.site-footer .brand {
+  color: #ffffff;
+}
+.site-footer > span:nth-child(2) {
+  margin-left: auto;
+  color: #a8b9b8;
+}
+.site-footer > span:nth-child(3) {
+  color: #78c9ff;
+}
+@media (max-width: 800px) {
+  .site-header::after,
+  .site-footer::before {
+    display: none;
+  }
+  .site-header {
+    height: 70px;
+  }
+  .site-shell {
+    padding-top: 70px;
+  }
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 28px;
+    gap: 13px;
+  }
+  .site-footer > span:nth-child(2) {
+    margin-left: 0;
+  }
+}
+.sales-page-section {
+  position: relative;
+  overflow: hidden;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 8vw;
+  background: #07171b;
+  border-top: 1px solid rgba(126, 207, 255, 0.32);
+  border-bottom: 1px solid rgba(126, 207, 255, 0.32);
+}
+.sales-page-section::before {
+  content: "SIGNAL DESK / OPEN";
+  position: absolute;
+  top: 30px;
+  right: clamp(24px, 8vw, 136px);
+  color: #78c9ff;
+  font: 9px var(--mono);
+  letter-spacing: 1.6px;
+}
+.sales-page-section::after {
+  content: "";
+  position: absolute;
+  right: -130px;
+  bottom: -160px;
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgba(126, 207, 255, 0.22);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 25px rgba(126, 207, 255, 0.04),
+    0 0 0 50px rgba(126, 207, 255, 0.03);
+  animation: salesOrbit 16s linear infinite;
+  pointer-events: none;
+}
+.sales-page-section .contact-copy {
+  position: relative;
+  z-index: 1;
+}
+.sales-page-section .contact-copy h2 {
+  color: #f7fbff;
+}
+.sales-page-section .contact-copy h2 em {
+  color: #9cdbff;
+}
+.sales-page-section .contact-copy > p:nth-of-type(2) {
+  color: #b7c8c8;
+}
+.sales-page-section .contact-details {
+  gap: 11px;
+  color: #8bd5ff;
+}
+.sales-page-section .inquiry-form {
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  border: 1px solid rgba(126, 207, 255, 0.38);
+  border-radius: 16px;
+  background: rgba(8, 28, 34, 0.86);
+  box-shadow:
+    0 0 0 1px rgba(126, 207, 255, 0.09),
+    0 0 34px rgba(24, 142, 226, 0.18);
+}
+.sales-page-section .inquiry-form label {
+  color: #9cdbff;
+}
+.sales-page-section .inquiry-form input,
+.sales-page-section .inquiry-form select,
+.sales-page-section .inquiry-form textarea {
+  border-color: rgba(156, 219, 255, 0.35);
+  color: #ffffff;
+}
+.sales-page-section .inquiry-form select {
+  min-height: 43px;
+  padding: 10px 12px;
+  border: 1px solid rgba(126, 207, 255, 0.55);
+  border-radius: 8px;
+  background: #123d50;
+  color: #d9f1ff;
+  cursor: pointer;
+}
+.sales-page-section .inquiry-form select option {
+  background: #f6f3eb;
+  color: #17332d;
+  font-family: var(--sans);
+}
+.sales-page-section .inquiry-form select:focus {
+  background: #19536b;
+  border-color: #8bd5ff;
+  box-shadow: 0 0 18px rgba(56, 170, 255, 0.32);
+}
+.sales-page-section .inquiry-form input:focus,
+.sales-page-section .inquiry-form select:focus,
+.sales-page-section .inquiry-form textarea:focus {
+  border-color: #78c9ff;
+  box-shadow: 0 8px 18px -16px #78c9ff;
+}
+.sales-page-section .button-light {
+  background: #168ee2;
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(56, 170, 255, 0.45);
+}
+@keyframes salesOrbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 800px) {
+  .sales-page-section::before {
+    top: 20px;
+    right: 20px;
+  }
+  .sales-page-section .inquiry-form {
+    padding: 21px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sales-page-section::after {
+    animation: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .product-card,
+  .home-next-grid a {
+    animation: none;
+  }
+}
+.field-map {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 7vw;
+  align-items: center;
+  padding: 120px clamp(24px, 8vw, 136px) 130px;
+  color: #f6f3eb;
+  background: rgba(7, 13, 13, 0.52);
+  border-top: 1px solid rgba(126, 207, 255, 0.2);
+  border-bottom: 1px solid rgba(126, 207, 255, 0.2);
+}
+.field-copy {
+  max-width: 440px;
+}
+.field-copy h2 {
+  margin: 25px 0 22px;
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.03;
+  letter-spacing: -3px;
+}
+.field-copy h2 em {
+  color: #9cdbff;
+  font-family: Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+.field-copy > p:not(.eyebrow) {
+  max-width: 370px;
+  color: #aebbb8;
+  line-height: 1.75;
+  font-size: 13px;
+}
+.field-copy .text-link {
+  display: inline-block;
+  margin-top: 21px;
+  color: #d9f1ff;
+  border-color: #78c9ff;
+}
+.map-visual {
+  position: relative;
+  width: min(100%, 600px);
+  aspect-ratio: 1 / 0.75;
+  justify-self: end;
+  border: 1px solid rgba(126, 207, 255, 0.24);
+  background: radial-gradient(
+    circle at center,
+    rgba(36, 133, 189, 0.16),
+    transparent 38%
+  );
+  overflow: hidden;
+}
+.map-visual::before,
+.map-visual::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #d5f1ff;
+  box-shadow: 0 0 11px 3px #339eff;
+}
+.map-visual::before {
+  top: 18%;
+  left: 18%;
+}
+.map-visual::after {
+  right: 16%;
+  bottom: 21%;
+}
+.map-ring,
+.map-axis {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.map-ring {
+  border: 1px solid rgba(126, 207, 255, 0.4);
+  border-radius: 50%;
+}
+.map-ring-large {
+  width: 75%;
+  height: 100%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+}
+.map-ring-small {
+  width: 44%;
+  height: 58%;
+  transform: translate(-50%, -50%) rotate(33deg);
+  border-color: rgba(242, 140, 114, 0.55);
+  border-style: dashed;
+}
+.map-axis {
+  background: rgba(126, 207, 255, 0.22);
+}
+.axis-horizontal {
+  width: 100%;
+  height: 1px;
+}
+.axis-vertical {
+  width: 1px;
+  height: 100%;
+}
+.map-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 78px;
+  height: 78px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  transform: translate(-50%, -50%);
+  border: 1px solid #8bd5ff;
+  border-radius: 50%;
+  background: #0b242c;
+  color: #d9f1ff;
+  font-size: 28px;
+  box-shadow: 0 0 28px rgba(51, 158, 255, 0.5);
+}
+.map-core span {
+  margin-top: 5px;
+  color: #8bcdf2;
+  font: 7px var(--mono);
+  letter-spacing: 1px;
+}
+.map-node {
+  position: absolute;
+  display: grid;
+  gap: 4px;
+  width: 142px;
+  padding: 13px;
+  border: 1px solid rgba(126, 207, 255, 0.55);
+  background: rgba(6, 16, 18, 0.9);
+  color: #f6f3eb;
+  transition:
+    transform 0.25s,
+    background 0.25s,
+    box-shadow 0.25s;
+}
+.map-node:hover {
+  background: #123d50;
+  box-shadow: 0 0 24px rgba(51, 158, 255, 0.65);
+  transform: scale(1.05);
+}
+.map-node strong {
+  color: #7dcbff;
+  font: 10px var(--mono);
+}
+.map-node span {
+  font-size: 14px;
+  font-weight: 700;
+}
+.map-node small {
+  color: #9db1b7;
+  font: 9px var(--mono);
+}
+.map-node-operations {
+  top: 13%;
+  left: 8%;
+}
+.map-node-security {
+  top: 12%;
+  right: 7%;
+}
+.map-node-intelligence {
+  right: 10%;
+  bottom: 11%;
+}
+@media (max-width: 800px) {
+  .field-map {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding-top: 85px;
+    padding-bottom: 90px;
+  }
+  .map-visual {
+    justify-self: stretch;
+    width: 100%;
+  }
+}
+@media (max-width: 470px) {
+  .field-map {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .map-node {
+    width: 112px;
+    padding: 9px;
+  }
+  .map-node span {
+    font-size: 11px;
+  }
+  .map-node small {
+    font-size: 7px;
+  }
+  .map-core {
+    width: 58px;
+    height: 58px;
+    font-size: 20px;
+  }
+}
+
+/* ---- Catalog card upgrades: badge, feature count, benefits, CTA ---- */
+.product-card {
+  position: relative;
+}
+.product-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: #ffb83f;
+  color: #182822;
+  font: 9px var(--mono);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+.product-feature-count {
+  display: inline-block;
+  margin-top: 12px;
+  color: #78c9ff;
+  font: 9px var(--mono);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.product-benefits {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+.product-benefits li {
+  position: relative;
+  padding-left: 15px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--muted, #9fb0ad);
+}
+.product-benefits li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #78c9ff;
+}
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #168ee2;
+  color: #ffffff;
+  font: 11px var(--mono);
+  letter-spacing: 0.3px;
+  transition: transform 0.2s, background 0.2s;
+}
+.cta-button:hover {
+  transform: translateY(-2px);
+  background: #1f9cf5;
+}
+.catalog-page-section .product-badge {
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  font-size: 7px;
+}
+.catalog-page-section .product-feature-count {
+  margin-top: 8px;
+  font-size: 7px;
+}
+.catalog-page-section .product-benefits {
+  margin-top: 7px;
+  gap: 4px;
+}
+.catalog-page-section .product-benefits li {
+  font-size: 9px;
+  padding-left: 12px;
+}
+.catalog-page-section .cta-button {
+  padding: 7px 10px;
+  font-size: 8px;
+}
+
+/* ---- Product detail page ---- */
+.page-hero-product > p {
+  max-width: 420px;
+}
+.product-detail-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6vw;
+  padding: 80px clamp(24px, 8vw, 136px);
+  align-items: start;
+}
+.product-detail-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 320px;
+}
+.product-badge-static {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.detail-benefits {
+  margin: 20px 0 30px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+.detail-benefits li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d5e0dd;
+}
+.detail-benefits li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #78c9ff;
+  font-size: 12px;
+}
+.detail-pricing-card {
+  display: grid;
+  gap: 6px;
+  padding: 24px;
+  border-radius: 14px;
+  border: 1px solid rgba(126, 207, 255, 0.3);
+  background: rgba(8, 28, 34, 0.6);
+}
+.detail-pricing-label {
+  font: 9px var(--mono);
+  text-transform: uppercase;
+  color: #78c9ff;
+  letter-spacing: 1px;
+}
+.detail-pricing-value {
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+.detail-pricing-note {
+  color: #9fb0ad;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.detail-pricing-card .button {
+  justify-self: start;
+}
+.detail-features-section,
+.detail-faq-section {
+  padding: 70px clamp(24px, 8vw, 136px);
+  border-top: 1px solid rgba(126, 207, 255, 0.16);
+}
+.detail-features-section h2,
+.detail-faq-section h2 {
+  margin: 20px 0 40px;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+.detail-features-section h2 em,
+.detail-faq-section h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  color: #9cdbff;
+}
+.feature-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 40px;
+}
+.feature-list li {
+  position: relative;
+  padding: 16px 0 16px 26px;
+  border-bottom: 1px solid rgba(126, 207, 255, 0.14);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.feature-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #78c9ff;
+}
+.faq-list {
+  display: grid;
+  gap: 1px;
+  background: rgba(126, 207, 255, 0.16);
+}
+.faq-item {
+  background: #07171b;
+  padding: 20px 22px;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  list-style: none;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::after {
+  content: "+";
+  float: right;
+  color: #78c9ff;
+}
+.faq-item[open] summary::after {
+  content: "−";
+}
+.faq-item p {
+  margin: 14px 0 0;
+  color: #b7c8c8;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.detail-cta-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 90px clamp(24px, 8vw, 136px);
+  flex-wrap: wrap;
+}
+.detail-cta-section h2 {
+  margin: 20px 0 0;
+  font-size: clamp(30px, 4vw, 46px);
+  letter-spacing: -2px;
+}
+.detail-cta-section h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  color: #9cdbff;
+}
+@media (max-width: 800px) {
+  .product-detail-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 60px 20px;
+  }
+  .detail-features-section,
+  .detail-faq-section {
+    padding: 50px 20px;
+  }
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+  .detail-cta-section {
+    padding: 60px 20px;
+  }
+}
+
+/* =========================================================
+   REALISTIC ATMOSPHERIC SKY — Northstar
+   Cinematic cloud layer with clearly visible, natural movement.
+   ========================================================= */
+.night-sky {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  isolation: isolate;
+
+  background:
+    url("sky-clouds.png") 0% 52% / 138% 125% no-repeat,
+    radial-gradient(ellipse at 72% 44%, rgba(57, 126, 165, 0.16), transparent 44%),
+    linear-gradient(180deg, #02091b 0%, #061a34 43%, #071827 100%);
+
+  animation: cinematicCloudJourney 34s ease-in-out infinite;
+  will-change: background-position, background-size;
+}
+
+/* A deep atmospheric veil makes the cloud bank feel embedded in the sky. */
+.night-sky::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: auto 0 0;
+  height: 62%;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3, 12, 27, 0) 0%,
+      rgba(3, 12, 27, 0.03) 17%,
+      rgba(2, 9, 20, 0.20) 47%,
+      rgba(2, 7, 16, 0.72) 100%
+    );
+}
+
+/* The old CSS cloud blobs are disabled; the photographic cloud layer is used instead. */
+.night-sky .cloud,
+.night-sky .cloud::before,
+.night-sky .cloud::after {
+  display: none !important;
+}
+
+/*
+   The movement is deliberately large enough to be visible.
+   The cloud image is oversized so its edges never enter the viewport.
+   The changing scale prevents it from looking like a flat image sliding by.
+*/
+@keyframes cinematicCloudJourney {
+  0% {
+    background-position:
+      0% 52%,
+      50% 50%,
+      50% 50%;
+    background-size:
+      138% 125%,
+      auto,
+      auto;
+  }
+
+  25% {
+    background-position:
+      30% 49%,
+      50% 50%,
+      50% 50%;
+    background-size:
+      146% 129%,
+      auto,
+      auto;
+  }
+
+  50% {
+    background-position:
+      63% 52%,
+      50% 50%,
+      50% 50%;
+    background-size:
+      140% 126%,
+      auto,
+      auto;
+  }
+
+  75% {
+    background-position:
+      94% 48%,
+      50% 50%,
+      50% 50%;
+    background-size:
+      148% 130%,
+      auto,
+      auto;
+  }
+
+  100% {
+    background-position:
+      0% 52%,
+      50% 50%,
+      50% 50%;
+    background-size:
+      138% 125%,
+      auto,
+      auto;
+  }
+}
+
+/* Star field moves independently, so the sky has depth rather than one moving texture. */
+.night-sky::before {
+  opacity: 0.48;
+  mix-blend-mode: screen;
+  animation:
+    starDrift 30s linear infinite,
+    starTwinkle 7s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes starDrift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-75px, 38px, 0);
+  }
+}
+
+@keyframes starTwinkle {
+  from {
+    opacity: 0.30;
+  }
+  to {
+    opacity: 0.58;
+  }
+}
+
+.night-sky .moon {
+  z-index: 3;
+}
+
+@media (max-width: 800px) {
+  .night-sky {
+    background-size:
+      175% 126%,
+      cover,
+      cover;
+    animation-duration: 27s;
+  }
+
+  .night-sky::before {
+    opacity: 0.34;
+    animation-duration: 38s, 8s;
+  }
+
+  @keyframes starDrift {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-48px, 24px, 0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .night-sky {
+    animation: none;
+    background-position:
+      50% 50%,
+      50% 50%,
+      50% 50%;
+  }
+
+  .night-sky::before {
+    animation: none;
+    opacity: 0.42;
+    transform: none;
+  }
+}
+
+/* ==========================================================
+   STAR SPARKLES — a small number of stars catch the light
+   like distant diamonds. They sit inside the atmosphere.
+   ========================================================== */
+.diamond-star {
+  position: absolute;
+  z-index: 3;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 0 4px rgba(220, 244, 255, 0.95),
+    0 0 10px rgba(170, 220, 255, 0.65);
+  opacity: 0.42;
+  transform: rotate(45deg) scale(0.72);
+  animation: diamondTwinkle 5.8s ease-in-out infinite;
+}
+
+.diamond-star::before,
+.diamond-star::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Fine vertical and horizontal rays create the diamond/star sparkle. */
+.diamond-star::before {
+  width: 1px;
+  height: 18px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.95) 38%,
+    rgba(255, 255, 255, 0.98) 50%,
+    rgba(255, 255, 255, 0.95) 62%,
+    transparent
+  );
+}
+
+.diamond-star::after {
+  width: 18px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.85) 38%,
+    rgba(255, 255, 255, 0.98) 50%,
+    rgba(255, 255, 255, 0.85) 62%,
+    transparent
+  );
+}
+
+.diamond-star-one {
+  top: 13%;
+  left: 12%;
+  animation-delay: -1.2s;
+  animation-duration: 6.4s;
+}
+
+.diamond-star-two {
+  top: 21%;
+  left: 34%;
+  animation-delay: -4.1s;
+  animation-duration: 8.2s;
+  transform: rotate(45deg) scale(0.58);
+}
+
+.diamond-star-three {
+  top: 10%;
+  right: 27%;
+  animation-delay: -2.7s;
+  animation-duration: 7.1s;
+}
+
+.diamond-star-four {
+  top: 32%;
+  right: 10%;
+  animation-delay: -5.3s;
+  animation-duration: 9s;
+  transform: rotate(45deg) scale(0.62);
+}
+
+.diamond-star-five {
+  top: 43%;
+  left: 20%;
+  animation-delay: -7.4s;
+  animation-duration: 10.5s;
+  transform: rotate(45deg) scale(0.52);
+}
+
+.diamond-star-six {
+  top: 28%;
+  left: 61%;
+  animation-delay: -3.8s;
+  animation-duration: 7.8s;
+  transform: rotate(45deg) scale(0.55);
+}
+
+@keyframes diamondTwinkle {
+  0%, 100% {
+    opacity: 0.28;
+    filter: brightness(0.9);
+  }
+  38% {
+    opacity: 0.5;
+    filter: brightness(1.1);
+  }
+  48% {
+    opacity: 1;
+    filter: brightness(1.9);
+    transform: rotate(45deg) scale(1.15);
+  }
+  54% {
+    opacity: 0.68;
+    filter: brightness(1.35);
+    transform: rotate(45deg) scale(0.88);
+  }
+  62% {
+    opacity: 0.38;
+    filter: brightness(1);
+    transform: rotate(45deg) scale(0.68);
+  }
+}
+
+@media (max-width: 800px) {
+  .diamond-star-one { left: 15%; }
+  .diamond-star-two { left: 42%; }
+  .diamond-star-three { right: 18%; }
+  .diamond-star-four { right: 8%; }
+  .diamond-star-five { left: 12%; }
+  .diamond-star-six { left: 68%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diamond-star {
+    animation: none;
+    opacity: 0.62;
+    filter: none;
+  }
+}
+
+
+
+/* =========================================================
+   NORTHSTAR — SLOW CINEMATIC CLOUDS
+   ========================================================= */
+
+.night-sky {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+
+  /* Keep the photographic sky fixed */
+  background-image:
+    url("sky-clouds.png"),
+    linear-gradient(
+      180deg,
+      #020817 0%,
+      #07152b 45%,
+      #0b1d35 100%
+    );
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  /* IMPORTANT: no animation on the sky itself */
+  animation: none;
+}
+
+
+/* ---------------------------------------------------------
+   Moving cloud layer
+   --------------------------------------------------------- */
+
+.night-sky::before {
+  content: "";
+  position: absolute;
+  inset: -4% -14%;
+
+  background-image: url("sky-clouds.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  opacity: 0.72;
+
+  /*
+     Only movement.
+     No reverse direction.
+     No zoom.
+     No pulsing.
+  */
+  animation: slowCloudDrift 120s linear infinite;
+
+  will-change: transform;
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   Very subtle atmospheric darkness
+   --------------------------------------------------------- */
+
+.night-sky::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(1, 7, 20, 0.18) 0%,
+      rgba(3, 12, 28, 0.05) 45%,
+      rgba(2, 8, 20, 0.28) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   RIGHT → LEFT ONLY
+   --------------------------------------------------------- */
+
+@keyframes slowCloudDrift {
+  0% {
+    transform: translate3d(7%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-7%, 0, 0);
+  }
+}
+
+
+/* ---------------------------------------------------------
+   Hide the old floating CSS clouds
+   --------------------------------------------------------- */
+
+.night-sky .cloud {
+  display: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   Mobile — even slower
+   --------------------------------------------------------- */
+
+@media (max-width: 800px) {
+  .night-sky::before {
+    animation-duration: 135s;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   Accessibility
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .night-sky::before {
+    animation: none;
+    transform: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   NORTHSTAR — FINAL CINEMATIC SKY
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   SKY BASE
+   ---------------------------------------------------------- */
+
+.night-sky {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #010611 0%,
+      #031024 34%,
+      #071a32 68%,
+      #0a2038 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ----------------------------------------------------------
+   NATURAL STAR FIELD
+   Many small stars — these stay visible.
+   ---------------------------------------------------------- */
+
+.night-sky::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background-image:
+
+    /* upper sky */
+    radial-gradient(circle at 5% 8%,
+      rgba(255,255,255,.72) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 11% 19%,
+      rgba(220,238,255,.62) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 18% 7%,
+      rgba(255,255,255,.82) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 24% 25%,
+      rgba(195,225,255,.58) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 31% 12%,
+      rgba(255,255,255,.76) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 38% 20%,
+      rgba(210,235,255,.62) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 44% 6%,
+      rgba(255,255,255,.78) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 51% 17%,
+      rgba(205,230,255,.58) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 58% 9%,
+      rgba(255,255,255,.72) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 65% 23%,
+      rgba(210,235,255,.60) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 72% 11%,
+      rgba(255,255,255,.76) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 79% 20%,
+      rgba(200,230,255,.58) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 86% 7%,
+      rgba(255,255,255,.82) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 94% 16%,
+      rgba(210,235,255,.65) 0 1px,
+      transparent 1.5px),
+
+
+    /* middle sky */
+    radial-gradient(circle at 8% 35%,
+      rgba(200,230,255,.55) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 15% 45%,
+      rgba(255,255,255,.62) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 22% 34%,
+      rgba(210,235,255,.52) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 29% 42%,
+      rgba(255,255,255,.66) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 36% 31%,
+      rgba(205,230,255,.48) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 43% 40%,
+      rgba(255,255,255,.60) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 50% 32%,
+      rgba(205,230,255,.52) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 57% 44%,
+      rgba(255,255,255,.58) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 64% 34%,
+      rgba(210,235,255,.50) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 71% 42%,
+      rgba(255,255,255,.62) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 78% 31%,
+      rgba(205,230,255,.50) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 85% 45%,
+      rgba(255,255,255,.60) 0 1px,
+      transparent 1.5px),
+
+    radial-gradient(circle at 92% 36%,
+      rgba(205,230,255,.52) 0 1px,
+      transparent 1.5px);
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  opacity: .78;
+
+  pointer-events: none;
+}
+
+
+/* ----------------------------------------------------------
+   PHOTOGRAPHIC CLOUD LAYER
+   ---------------------------------------------------------- */
+
+/*
+   IMPORTANT:
+
+   This layer uses the actual sky-clouds.png image.
+
+   It moves only from RIGHT → LEFT.
+   It does NOT reverse.
+   It does NOT zoom.
+   It does NOT pulse.
+*/
+
+.night-sky .cloud-layer {
+  display: block;
+
+  position: absolute;
+
+  /*
+     Oversize the layer so the edges never become visible.
+  */
+  top: -5%;
+  bottom: -5%;
+  left: -14%;
+  right: -14%;
+
+  z-index: 2;
+
+  background-image: url("sky-clouds.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  opacity: .70;
+
+  animation:
+    northstarCloudDrift
+    180s
+    linear
+    infinite;
+
+  will-change: transform;
+
+  pointer-events: none;
+}
+
+
+/* ----------------------------------------------------------
+   FALLBACK FOR THE OLD CLOUD ELEMENTS
+   ---------------------------------------------------------- */
+
+.night-sky .cloud,
+.night-sky .cloud-one,
+.night-sky .cloud-two,
+.night-sky .cloud-three {
+  display: none !important;
+
+  animation: none !important;
+}
+
+
+/* ----------------------------------------------------------
+   CLOUD MOVEMENT
+   RIGHT → LEFT ONLY
+   ---------------------------------------------------------- */
+
+@keyframes northstarCloudDrift {
+
+  from {
+    transform: translate3d(7%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-7%, 0, 0);
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   ATMOSPHERIC DEPTH
+   ---------------------------------------------------------- */
+
+.night-sky::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 4;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(1, 6, 17, .14) 0%,
+      rgba(2, 10, 25, .02) 45%,
+      rgba(1, 7, 18, .30) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ----------------------------------------------------------
+   MOON
+   ---------------------------------------------------------- */
+
+.night-sky .moon {
+  position: absolute;
+
+  top: 10%;
+  right: 11%;
+
+  width: 30px;
+  height: 30px;
+
+  z-index: 3;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(255,255,255,.98) 0%,
+      rgba(220,238,255,.94) 48%,
+      rgba(157,195,225,.72) 72%,
+      rgba(80,125,165,.28) 100%
+    );
+
+  box-shadow:
+    0 0 25px rgba(170,220,255,.20),
+    0 0 65px rgba(100,170,230,.12);
+
+  opacity: .88;
+
+  pointer-events: none;
+}
+
+
+/* subtle moon shadow/crater */
+.night-sky .moon i {
+  position: absolute;
+
+  width: 13px;
+  height: 13px;
+
+  top: 22%;
+  left: 27%;
+
+  border-radius: 50%;
+
+  background: rgba(100,145,175,.16);
+
+  box-shadow:
+    20px 19px 0 rgba(100,145,175,.10),
+    7px 39px 0 rgba(100,145,175,.08),
+    34px 8px 0 rgba(100,145,175,.07);
+}
+
+
+/* ----------------------------------------------------------
+   DIAMOND STARS
+   Only a few of these sparkle.
+   ---------------------------------------------------------- */
+
+.diamond-star {
+  position: absolute;
+
+  z-index: 5;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.96);
+
+  box-shadow:
+    0 0 4px rgba(220,244,255,.90),
+    0 0 9px rgba(170,220,255,.55);
+
+  opacity: .38;
+
+  transform:
+    rotate(45deg)
+    scale(.68);
+
+  animation:
+    northstarDiamondTwinkle
+    8s
+    ease-in-out
+    infinite;
+}
+
+
+/* vertical ray */
+
+.diamond-star::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 1px;
+  height: 16px;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255,255,255,.75) 40%,
+      rgba(255,255,255,.95) 50%,
+      rgba(255,255,255,.75) 60%,
+      transparent
+    );
+}
+
+
+/* horizontal ray */
+
+.diamond-star::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 16px;
+  height: 1px;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(255,255,255,.70) 40%,
+      rgba(255,255,255,.95) 50%,
+      rgba(255,255,255,.70) 60%,
+      transparent
+    );
+}
+
+
+/* ----------------------------------------------------------
+   DIAMOND STAR POSITIONS
+   ---------------------------------------------------------- */
+
+.diamond-star-one {
+  top: 13%;
+  left: 12%;
+
+  animation-delay: -2s;
+  animation-duration: 9s;
+}
+
+
+.diamond-star-two {
+  top: 21%;
+  left: 34%;
+
+  transform:
+    rotate(45deg)
+    scale(.50);
+
+  animation-delay: -5s;
+  animation-duration: 11s;
+}
+
+
+.diamond-star-three {
+  top: 10%;
+  right: 27%;
+
+  animation-delay: -7s;
+  animation-duration: 10s;
+}
+
+
+.diamond-star-four {
+  top: 32%;
+  right: 10%;
+
+  transform:
+    rotate(45deg)
+    scale(.55);
+
+  animation-delay: -4s;
+  animation-duration: 12s;
+}
+
+
+.diamond-star-five {
+  top: 43%;
+  left: 20%;
+
+  transform:
+    rotate(45deg)
+    scale(.46);
+
+  animation-delay: -9s;
+  animation-duration: 13s;
+}
+
+
+.diamond-star-six {
+  top: 28%;
+  left: 61%;
+
+  transform:
+    rotate(45deg)
+    scale(.48);
+
+  animation-delay: -6s;
+  animation-duration: 10s;
+}
+
+
+/* ----------------------------------------------------------
+   VERY SUBTLE SPARKLE
+   ---------------------------------------------------------- */
+
+@keyframes northstarDiamondTwinkle {
+
+  0%,
+  100% {
+    opacity: .25;
+
+    filter: brightness(.9);
+  }
+
+  45% {
+    opacity: .40;
+
+    filter: brightness(1);
+  }
+
+  50% {
+    opacity: .78;
+
+    filter: brightness(1.5);
+
+    transform:
+      rotate(45deg)
+      scale(.88);
+  }
+
+  55% {
+    opacity: .48;
+
+    filter: brightness(1.15);
+
+    transform:
+      rotate(45deg)
+      scale(.68);
+  }
+
+  65% {
+    opacity: .30;
+
+    filter: brightness(1);
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   MOBILE
+   ---------------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+  .night-sky .cloud-layer {
+    animation-duration: 210s;
+  }
+
+  .night-sky .moon {
+    width: 62px;
+    height: 62px;
+
+    top: 8%;
+    right: 7%;
+  }
+
+  .diamond-star-one {
+    left: 15%;
+  }
+
+  .diamond-star-two {
+    left: 42%;
+  }
+
+  .diamond-star-three {
+    right: 18%;
+  }
+
+  .diamond-star-four {
+    right: 8%;
+  }
+
+  .diamond-star-five {
+    left: 12%;
+  }
+
+  .diamond-star-six {
+    left: 68%;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   REDUCED MOTION
+   ---------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .night-sky .cloud-layer {
+    animation: none;
+
+    transform: none;
+  }
+
+  .diamond-star {
+    animation: none;
+
+    opacity: .45;
+
+    filter: none;
+  }
+
+}
